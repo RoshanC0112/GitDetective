@@ -1,0 +1,312 @@
+/* Light mode variables */
+:root {
+    --lm-bg: #f6f8ff;
+    --lm-bg-content: #fefefe;
+    --lm-text: #4b6a9b;
+    --lm-text-alt: #2b3442;
+    --lm-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.2);
+    --btn: #0079ff;
+    --btn-hover: #60abff;
+}
+
+/* Dark mode variables */
+body.dark-mode {
+    --lm-bg: #141D2F;
+    --lm-bg-content: #1E2A47;
+    --lm-text: #ffffff;
+    --lm-text-alt: #ffffff;
+    --lm-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.2);
+    --btn: #0079ff;
+    --btn-hover: #60abff;
+    background-color: var(--lm-bg);
+    color: var(--lm-text);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Space Mono", monospace;
+}
+
+body {
+    background-color: var(--lm-bg);
+    font-size: 13px;
+    color: var(--lm-text);
+    width: 100%;
+    min-height: 100vh;
+}
+
+.wrapper {
+    width: 327px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+}
+
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mode-btn {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.btn-drk, .btn-light {
+    background: none;
+    border: none;
+    padding: 0 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    position: relative;
+}
+
+.btn-drk.active, .btn-light.active {
+    box-shadow: var(--lm-shadow);
+    border: 2px solid var(--btn);
+    background-color: var(--lm-bg-content);
+    color: var(--btn);
+}
+
+/* Hide both mode titles by default */
+.mode-dark, .mode-light {
+    display: none;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+/* Show only active mode title */
+.btn-drk.active .mode-dark {
+    display: inline;
+}
+.btn-light.active .mode-light {
+    display: inline;
+}
+
+/* Search bar styles */
+.search-bar {
+    position: relative;
+    background-color: var(--lm-bg-content);
+    border-radius: 15px;
+    box-shadow: var(--lm-shadow);
+    display: flex;
+    align-items: center;
+    padding: 6px;
+    gap: 8px;
+}
+
+.search-bar img {
+    height: 20px;
+    width: 20px;
+    margin-left: 8px;
+}
+
+.search-input {
+    border: none;
+    width: 70%;
+    outline: none;
+    background: none;
+    color: var(--lm-text);
+    padding-left: 12px;
+    font-size: 13px;
+}
+
+.search-input::placeholder {
+    color: var(--lm-text);
+    letter-spacing: -0.5px;
+    font-size: 13px;
+}
+
+.search-btn {
+    min-width: 84px;
+    padding: 10px 16px;
+    background-color: var(--btn);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+}
+
+.search-btn:hover {
+    background-color: var(--btn-hover);
+}
+
+.search-btn:active {
+    transform: scale(0.975);
+}
+
+/* Profile container styles */
+.profile-Container {
+    background-color: var(--lm-bg-content);
+    border-radius: 15px;
+    box-shadow: var(--lm-shadow);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.profile-info {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+#avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 90px;
+    object-fit: cover;
+    background: #eaeaea;
+}
+
+.profile-header {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.profile-name {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--lm-text-alt);
+}
+
+.profile-username {
+    color: var(--btn);
+    text-decoration: none;
+    font-size: 14px;
+    word-break: break-all;
+}
+
+.profile-join-date {
+    font-size: 12px;
+    color: var(--lm-text);
+    opacity: 0.8;
+}
+
+.profile-bio {
+    line-height: 1.5;
+    opacity: 0.75;
+    font-size: 13px;
+}
+
+.profile-stats {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--lm-bg);
+    border-radius: 10px;
+    padding: 18px;
+    gap: 8px;
+}
+
+.stat-repos, .stat-followers, .stat-following {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 33%;
+    gap: 4px;
+}
+
+.stat-title {
+    font-size: 11px;
+    color: var(--lm-text);
+}
+
+.stat-value {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--lm-text-alt);
+}
+
+.profile-links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.profile-info-links {
+    font-size: 13px;
+    color: var(--lm-text);
+    word-break: break-all;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.location, .email, .twitter_username, .company {
+    font-size: 13px;
+    color: var(--lm-text);
+    opacity: 0.9;
+}
+
+/* Responsive styles */
+@media screen and (min-width: 768px) {
+    .wrapper {
+        width: 573px;
+    }
+    #avatar {
+        width: 117px;
+        height: 117px;
+    }
+    .profile-Container {
+        padding: 40px;
+    }
+    .profile-name {
+        font-size: 26px;
+    }
+    .profile-username {
+        font-size: 16px;
+    }
+    .profile-join-date, .profile-bio {
+        font-size: 15px;
+    }
+    .stat-title {
+        font-size: 13px;
+    }
+    .stat-value {
+        font-size: 22px;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .wrapper {
+        width: 730px;
+    }
+    .profile-Container {
+        position: relative;
+    }
+    #avatar {
+        position: absolute;
+        left: 0;
+        margin-left: 40px;
+    }
+    .profile-info {
+        margin-left: 120px;
+    }
+}
+
+/* Utility classes */
+.active {
+    box-shadow: var(--lm-shadow);
+    border: 2px solid var(--btn);
+    background-color: var(--lm-bg-content);
+    color: var(--btn);
+}
+
+.remove {
+    display: none !important;
+}

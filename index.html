@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>GitDetective</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="top-header">
+            <h1>GitDetective</h1>
+            <div class="mode-btn">
+                <button type="button" class="btn-drk">
+                    <span class="mode-dark">DARK</span>
+                    <img src="./assets/images/moon-icon.svg" alt="MODE">
+                </button>
+                <button type="button" class="btn-light active">
+                    <span class="mode-light">LIGHT</span>
+                    <img src="./assets/images/sun-icon.svg" alt="MODE">
+                </button>
+            </div>
+        </div>
+        <form>
+            <div class="search-bar">
+                <img src="./assets/images/search-icon.svg" alt="SEARCH">
+                <input type="text" placeholder="Enter a GitHub username..." class="search-input" required>
+                <button type="button" class="search-btn">Search</button>
+            </div>
+        </form>
+        <div class="profile-Container remove">
+            <div class="profile-info">
+                <img src="" alt="Profile-picture" id="avatar">
+                <div class="profile-header">
+                    <h2 class="profile-name"></h2>
+                    <a href="" class="profile-username" target="_blank"></a>
+                    <p class="profile-join-date"></p>
+                </div>
+            </div>
+            <p class="profile-bio"></p>
+            <div class="profile-stats">
+                <div class="stat-repos">
+                    <p class="stat-title">Repos</p>
+                    <p class="stat-value repos"></p>
+                </div>
+                <div class="stat-followers">
+                    <p class="stat-title">Followers</p>
+                    <p class="stat-value followers"></p>
+                </div>
+                <div class="stat-following">
+                    <p class="stat-title">Following</p>
+                    <p class="stat-value following"></p>
+                </div>
+            </div>
+            <div class="profile-links">
+                <div class="profile-info-links location"></div>
+                <div class="profile-info-links email"></div>
+                <div class="profile-info-links twitter_username"></div>
+                <div class="profile-info-links company"></div>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
